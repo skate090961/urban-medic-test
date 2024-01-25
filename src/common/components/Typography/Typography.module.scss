@@ -27,7 +27,7 @@
 }
 
 .subtitle2 {
-  @include typography(--font-size-m, --line-height-l, --font-weight-regular);
+  @include typography(--font-size-m, --line-height-l, --font-weight-bold);
 }
 
 .caption {

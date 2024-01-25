@@ -1,0 +1,88 @@
+@import '@/styles/mixins';
+
+.button {
+  all: unset;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  justify-content: center;
+
+  padding: 0.688rem 1.25rem;
+
+  color: var(--color-light-100);
+
+  border-radius: 0.5rem;
+
+  &:disabled {
+    pointer-events: none;
+    cursor: default;
+    background: linear-gradient(
+      137deg,
+      var(--color-accent-100) 1.58%,
+      var(--color-accent-200) 96.24%
+    );
+  }
+}
+
+.primary {
+  background: linear-gradient(
+    137deg,
+    var(--color-accent-600) 1.58%,
+    var(--color-accent-300) 96.24%
+  );
+
+  &:hover {
+    background: linear-gradient(
+      137deg,
+      var(--color-accent-300) 1.58%,
+      var(--color-accent-600) 96.24%
+    );
+  }
+}
+
+.secondary {
+  background: linear-gradient(
+    127deg,
+    var(--color-accent-400) -13.37%,
+    var(--color-accent-500) 96.31%
+  );
+
+  &:hover {
+    background: linear-gradient(
+      137deg,
+      var(--color-accent-500) -13.37%,
+      var(--color-accent-400) 96.24%
+    );
+  }
+}
+
+.tertiary {
+  color: var(--color-dark-200);
+  background-color: var(--color-light-200);
+
+  &:hover {
+    background: linear-gradient(
+      137deg,
+      var(--color-accent-500) -13.37%,
+      var(--color-accent-400) 96.24%
+    );
+  }
+}
+
+.typography {
+  display: inline-flex;
+  gap: 0.625rem;
+  align-items: center;
+  color: inherit;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.loading {
+  pointer-events: none;
+  cursor: default;
+  background: var(--color-accent-100);
+}
