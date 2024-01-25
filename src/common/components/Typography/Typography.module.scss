@@ -1,0 +1,41 @@
+@import '@/styles/mixins';
+
+.typography {
+  all: unset;
+  display: block;
+  color: var(--color-dark-200);
+}
+
+.h1 {
+  @include typography(--font-size-xl, --line-height-xxl, --font-weight-bold);
+}
+
+.h2 {
+  @include typography(--font-size-l, --line-height-xl, --font-weight-bold);
+}
+
+.body1 {
+  @include typography(--font-size-m, --line-height-l, --font-weight-regular);
+}
+
+.subtitle1 {
+  @include typography(--font-size-xs, --line-height-m, --font-weight-bold);
+}
+
+.body2 {
+  @include typography(--font-size-xs, --line-height-m, --font-weight-regular);
+}
+
+.subtitle2 {
+  @include typography(--font-size-m, --line-height-l, --font-weight-regular);
+}
+
+.caption {
+  @include typography(--font-size-s, --line-height-s, --font-weight-regular);
+}
+
+.error {
+  @include typography(--font-size-s, --line-height-s, --font-weight-regular);
+
+  color: var(--color-danger-100);
+}
