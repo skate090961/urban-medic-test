@@ -1,9 +1,9 @@
 import { ComponentPropsWithoutRef, ElementType } from 'react'
 import { ClipLoader } from 'react-spinners'
 
-import { Typography } from '@/common/components/Typography'
-
 import s from './Button.module.scss'
+
+import { Typography } from '../typography'
 
 type ButtonVariant = 'primary' | 'secondary' | 'tertiary'
 export type ButtonProps<T extends ElementType = 'button'> = {
