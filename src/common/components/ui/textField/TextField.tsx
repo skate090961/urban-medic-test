@@ -1,6 +1,6 @@
 import { ComponentProps, KeyboardEvent, ReactNode, forwardRef } from 'react'
 
-import { Typography } from '@/common/components/typography'
+import { Typography } from '@/common/components/ui/typography'
 import { clsx } from 'clsx'
 
 import s from './TextField.module.scss'

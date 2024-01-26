@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef, forwardRef } from 'react'
 
-import { Typography } from '@/common/components/typography'
+import { Typography } from '@/common/components/ui/typography'
 
 import s from './Switch.module.scss'
 
@@ -11,13 +11,13 @@ type OptionProps = {
 export type SwitchProps = {
   className?: string
   name: string
-  onChangeOption: (value: string) => void
+  onOptionChange: (value: string) => void
   options: OptionProps[]
   value: string
 } & ComponentPropsWithoutRef<'div'>
 
 export const Switch = forwardRef<HTMLInputElement, SwitchProps>(
-  ({ className, name, onChangeOption, options, value, ...rest }, ref) => {
+  ({ className, name, onOptionChange, options, value, ...rest }, ref) => {
     return (
       <div className={`${s.root} ${className}`}>
         {options.map(option => {
@@ -29,7 +29,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>(
                 checked={isCurrentValue}
                 className={s.input}
                 name={name}
-                onChange={e => onChangeOption(e.currentTarget.value)}
+                onChange={e => onOptionChange(e.currentTarget.value)}
                 type={'radio'}
                 value={option.value}
                 {...rest}

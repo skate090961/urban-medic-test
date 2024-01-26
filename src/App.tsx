@@ -1,3 +1,5 @@
+import { Auth } from '@/pages/auth/Auth'
+
 export function App() {
-  return <div>Hello</div>
+  return <Auth />
 }
