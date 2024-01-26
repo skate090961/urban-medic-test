@@ -1,1 +1,0 @@
-export { USERS_TABLE_COLUMNS } from './USERS_TABLE_COLUMNS'

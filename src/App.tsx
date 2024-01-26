@@ -1,5 +1,9 @@
-import { UsersTable } from '@/features/users/ui'
+import { UserEditForm } from '@/common/components/forms/userEditForm'
 
 export function App() {
-  return <UsersTable />
+  return (
+    <div style={{ margin: '0 auto', width: '800px' }}>
+      <UserEditForm />
+    </div>
+  )
 }

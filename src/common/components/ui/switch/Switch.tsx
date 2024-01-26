@@ -4,7 +4,7 @@ import { Typography } from '@/common/components/ui/typography'
 
 import s from './Switch.module.scss'
 
-type OptionProps = {
+export type OptionProps = {
   name: string
   value: string
 }
