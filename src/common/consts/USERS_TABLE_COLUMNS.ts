@@ -1,4 +1,4 @@
-export const UsersTableColumns = [
+export const USERS_TABLE_COLUMNS = [
   {
     key: '№',
     title: '№',

@@ -1,6 +1,6 @@
 import { Table } from '@/common/components/ui/table'
 import { TableHeader } from '@/common/components/ui/tableHeader'
-import { UsersTableColumns } from '@/common/consts'
+import { USERS_TABLE_COLUMNS } from '@/common/consts'
 import { UserRow } from '@/features/users/ui/'
 
 export function UsersTable() {
@@ -65,7 +65,7 @@ export function UsersTable() {
 
   return (
     <Table.Root>
-      <TableHeader columns={UsersTableColumns} />
+      <TableHeader columns={USERS_TABLE_COLUMNS} />
       <Table.Body>
         {items.map((user, index) => (
           <UserRow key={index} user={user} />
