@@ -1,5 +1,5 @@
-import { Auth } from '@/pages/auth/Auth'
+import { UsersTable } from '@/features/users/ui'
 
 export function App() {
-  return <Auth />
+  return <UsersTable />
 }
