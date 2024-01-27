@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { Button } from '@/common/components/ui'
-import { EditUserModal, EditUserModalProps } from '@/features/users/ui/editUserModal/EditUserModal'
+import { EditUserModalProps, UserModal } from '@/features/users/ui/userModal/UserModal'
 
 type EditUserControlProps = Omit<EditUserModalProps, 'open' | 'setOpen'>
 
@@ -10,7 +10,7 @@ export function EditUserControl({ user }: EditUserControlProps) {
 
   return (
     <>
-      <EditUserModal open={open} setOpen={setOpen} user={user} />
+      <UserModal open={open} setOpen={setOpen} title={'Редактировать пользователя'} user={user} />
       <Button onClick={() => setOpen(true)}>Редактировать</Button>
     </>
   )

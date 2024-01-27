@@ -2,7 +2,7 @@ import { FC, memo } from 'react'
 
 import { Table } from '@/common/components/ui/table'
 import { User } from '@/features/users/api'
-import { EditUserControl } from '@/features/users/ui/editUserControl/EditUserControl'
+import { EditUserControl } from '@/features/users/ui'
 
 type Props = {
   user: User
