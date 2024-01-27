@@ -3,7 +3,11 @@ import { TableHeader } from '@/common/components/ui/tableHeader'
 import { UserRow } from '@/features/users/ui/'
 import { USERS_TABLE_COLUMNS } from '@/features/users/ui/usersTable/usersTable.constants'
 
-export function UsersTable() {
+type UsersTableProps = {
+  className?: string
+}
+
+export function UsersTable({ className }: UsersTableProps) {
   const items = [
     {
       count: 1,
@@ -64,7 +68,7 @@ export function UsersTable() {
   ]
 
   return (
-    <Table.Root>
+    <Table.Root className={className}>
       <TableHeader columns={USERS_TABLE_COLUMNS} />
       <Table.Body>
         {items.map((user, index) => (

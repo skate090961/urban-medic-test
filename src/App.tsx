@@ -1,5 +1,5 @@
-import { Header } from '@/common/components/header'
+import { Home } from '@/pages/home'
 
 export function App() {
-  return <Header />
+  return <Home />
 }
