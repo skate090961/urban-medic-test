@@ -1,5 +1,5 @@
-import { EditUser } from '@/features/users/ui'
+import { Header } from '@/common/components/header'
 
 export function App() {
-  return <EditUser />
+  return <Header />
 }

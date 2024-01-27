@@ -1,0 +1,12 @@
+.root {
+  display: flex;
+  justify-content: right;
+  width: 100%;
+  background-color: var(--color-light-100);
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+}
