@@ -1,7 +1,7 @@
 import { Table } from '@/common/components/ui/table'
 import { TableHeader } from '@/common/components/ui/tableHeader'
 import { UserRow } from '@/features/users/ui/'
-import { USERS_TABLE_COLUMNS } from '@/features/users/ui/usersTable/usersTable.constans'
+import { USERS_TABLE_COLUMNS } from '@/features/users/ui/usersTable/usersTable.constants'
 
 export function UsersTable() {
   const items = [

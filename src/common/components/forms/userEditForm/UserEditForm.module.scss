@@ -1,0 +1,23 @@
+.gender {
+  padding: 0 5.563rem;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.813rem;
+}
+
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 2.813rem;
+}
+
+.trashButton {
+  padding: 10px;
+  background: var(--color-light-200);
+  border-radius: 0.5rem;
+}

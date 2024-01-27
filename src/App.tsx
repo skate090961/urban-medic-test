@@ -1,9 +1,5 @@
-import { UserEditForm } from '@/common/components/forms/userEditForm'
+import { EditUser } from '@/features/users/ui'
 
 export function App() {
-  return (
-    <div style={{ margin: '0 auto', width: '800px' }}>
-      <UserEditForm />
-    </div>
-  )
+  return <EditUser />
 }

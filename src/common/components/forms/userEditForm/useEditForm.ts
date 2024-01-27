@@ -26,13 +26,10 @@ export function useEditForm() {
   const {
     field: { onChange, value },
   } = useController({ control, name: 'gender' })
-  const onSubmit = (data: UserEditFormValues) => {
-    console.log(data)
-  }
 
   return {
     errors,
-    handleSubmit: handleSubmit(onSubmit),
+    handleSubmit,
     onChange,
     register,
     value,
