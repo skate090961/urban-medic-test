@@ -4,7 +4,7 @@ import { nameSchema } from '@/common/utils/zod-schemas'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
-const userEditFormSchema = z.object({
+export const userEditFormSchema = z.object({
   email: z.string().trim().email(),
   firstName: nameSchema,
   gender: z.string().optional(),
@@ -12,15 +12,18 @@ const userEditFormSchema = z.object({
 })
 
 export type UserEditFormValues = z.infer<typeof userEditFormSchema>
+type UseEditFormPropsType = {
+  values: UserEditFormValues
+}
 
-export function useEditForm() {
+export function useEditForm({ values }: UseEditFormPropsType) {
   const {
     control,
     formState: { errors },
     handleSubmit,
     register,
   } = useForm<UserEditFormValues>({
-    defaultValues: { gender: 'male' },
+    defaultValues: { ...values },
     resolver: zodResolver(userEditFormSchema),
   })
   const {

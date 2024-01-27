@@ -3,17 +3,26 @@ import { UserEditFormValues, useEditForm } from '@/common/components/forms/userE
 import { GENDER_OPTIONS } from '@/common/components/forms/userEditForm/userEditForm.constants'
 import { Button, Switch, TextField } from '@/common/components/ui'
 import { IconButton } from '@/common/components/ui/iconButton/IconButton'
+import { User } from '@/features/users/api'
 
 import s from './UserEditForm.module.scss'
 
 type UserEditFormProps = {
   className?: string
+  defaultValues: User
   onSubmit: (data: UserEditFormValues) => void
 }
 
 //TODO: add validate, styles
-export function UserEditForm({ className, onSubmit }: UserEditFormProps) {
-  const { errors, handleSubmit, onChange, register, value } = useEditForm()
+export function UserEditForm({ className, defaultValues, onSubmit }: UserEditFormProps) {
+  const values: UserEditFormValues = {
+    email: defaultValues?.email,
+    firstName: defaultValues?.firstName,
+    gender: defaultValues?.gender,
+    lastName: defaultValues?.lastName,
+  }
+
+  const { errors, handleSubmit, onChange, register, value } = useEditForm({ values })
 
   return (
     <form className={`${s.form} ${className}`} noValidate onSubmit={handleSubmit(onSubmit)}>

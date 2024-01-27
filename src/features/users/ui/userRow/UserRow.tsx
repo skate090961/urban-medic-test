@@ -1,10 +1,8 @@
 import { FC, memo } from 'react'
 
-import { Button } from '@/common/components/ui'
 import { Table } from '@/common/components/ui/table'
 import { User } from '@/features/users/api'
-
-import s from './UserRow.module.scss'
+import { EditUserControl } from '@/features/users/ui/editUserControl/EditUserControl'
 
 type Props = {
   user: User
@@ -21,7 +19,7 @@ export const UserRow: FC<Props> = memo(({ user }) => {
       <Table.Cell>{gender}</Table.Cell>
       <Table.Cell>{email}</Table.Cell>
       <Table.Cell>
-        <Button className={s.edit}>Редактировать</Button>
+        <EditUserControl user={user} />
       </Table.Cell>
     </Table.Row>
   )
