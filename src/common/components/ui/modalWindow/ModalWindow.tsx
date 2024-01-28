@@ -12,7 +12,6 @@ type ModalWindowProps = {
   title: string
 } & PropsWithChildren
 
-//TODO: add animation
 export function ModalWindow({ children, open, setOpen, title }: ModalWindowProps) {
   const handleCloseClick = () => {
     setOpen(false)

@@ -1,1 +1,1 @@
-export * from 'src/features/users/api/responseUsers.types'
+export * from './responseUsers.types'

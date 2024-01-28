@@ -14,7 +14,6 @@ type UserEditFormProps = {
   onSubmit: (data: UserEditFormValues) => void
 }
 
-//TODO: add validate, styles
 export function UserEditForm({ className, defaultValues, onRemove, onSubmit }: UserEditFormProps) {
   const values: UserEditFormValues = {
     email: defaultValues?.email,
