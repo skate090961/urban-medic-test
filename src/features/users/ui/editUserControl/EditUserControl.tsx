@@ -6,6 +6,7 @@ import { Button } from '@/common/components/ui'
 import { removeUser, updateUser } from '@/features/users/model/reducer'
 import { EditUserModalProps, UserModal } from '@/features/users/ui/userModal/UserModal'
 
+import s from './EditUserControl.module.scss'
 type EditUserControlProps = Omit<EditUserModalProps, 'onSubmit' | 'open' | 'setOpen' | 'title'> & {
   isEditMode?: boolean
 }
@@ -32,7 +33,7 @@ export function EditUserControl({ isEditMode, user }: EditUserControlProps) {
         title={'Редактировать пользователя'}
         user={user}
       />
-      <Button disabled={!isEditMode} onClick={() => setOpen(true)}>
+      <Button className={s.editButton} disabled={!isEditMode} onClick={() => setOpen(true)}>
         Редактировать
       </Button>
     </>
