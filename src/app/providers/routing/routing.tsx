@@ -1,12 +1,19 @@
 import { useSelector } from 'react-redux'
-import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { Navigate, RouteObject, RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 import { selectSeed } from '@/features/users/model/reducer'
 import { Auth } from '@/pages/auth/Auth'
 import { Home } from '@/pages/home'
+import { NotFound } from '@/pages/notFound'
 
-const publicRoutes = [{ element: <Auth />, path: '/auth' }]
-const privateRoutes = [{ element: <Home />, path: '/' }]
+const publicRoutes: RouteObject[] = [
+  { element: <Auth />, path: '/auth' },
+  {
+    element: <NotFound />,
+    path: '/*',
+  },
+]
+const privateRoutes: RouteObject[] = [{ element: <Home />, path: '/' }]
 
 function PrivateRoutes() {
   const seed = useSelector(selectSeed)
