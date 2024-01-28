@@ -6,7 +6,7 @@ export const usersApi = {
     return usersInstance.get<UsersResponseType>('', {
       params: {
         page: 1,
-        results: 15,
+        results: 10,
         seed,
       },
     })

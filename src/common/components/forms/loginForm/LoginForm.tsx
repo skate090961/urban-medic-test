@@ -8,12 +8,12 @@ type LoginFormProps = {
 }
 
 export function LoginForm({ className }: LoginFormProps) {
-  const { errors, handleSubmit, register } = useLoginForm()
+  const { errors, handleSubmit, isLoading, register } = useLoginForm()
 
   return (
     <form className={`${s.form} ${className}`} noValidate onSubmit={handleSubmit}>
       <TextField {...register('seed')} errorMessage={errors.seed?.message} label={'Seed'} />
-      <Button type={'submit'} variant={'secondary'}>
+      <Button isLoading={isLoading} type={'submit'} variant={'secondary'}>
         Войти
       </Button>
     </form>

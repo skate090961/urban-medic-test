@@ -4,6 +4,7 @@ export function loadState() {
 
   if (persistedSeedString && persistedUsersString) {
     return {
+      isLoading: false,
       seed: JSON.parse(persistedSeedString),
       users: JSON.parse(persistedUsersString),
     }

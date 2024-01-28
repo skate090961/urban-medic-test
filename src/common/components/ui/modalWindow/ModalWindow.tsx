@@ -24,7 +24,7 @@ export function ModalWindow({ children, open, setOpen, title }: ModalWindowProps
         <>
           <div className={`${s.blur} ${open ? s.blurOpen : s.blurClosed}`}></div>
           <div className={s.root}>
-            <div className={s.modal}>
+            <div className={`${s.modal} ${open ? '' : s.closed}`}>
               <Typography as={'h2'} variant={'h2'}>
                 {title}
               </Typography>

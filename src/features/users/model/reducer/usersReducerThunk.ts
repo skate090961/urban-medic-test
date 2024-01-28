@@ -1,10 +1,11 @@
 import { usersApi } from '@/features/users/api/usersApi'
-import { setSeed, setUsers } from '@/features/users/model/reducer/usersReducer'
+import { setIsLoading, setSeed, setUsers } from '@/features/users/model/reducer/usersReducer'
 import { User } from '@/features/users/model/reducer/usersReducer.types'
 import { Dispatch } from 'redux'
 import { v1 } from 'uuid'
 
 export const fetchUsers = (seed: string) => async (dispatch: Dispatch) => {
+  dispatch(setIsLoading(true))
   try {
     const res = await usersApi.fetchUsers(seed)
     const usersModel: User[] = res.data.results.map(user => ({
@@ -19,5 +20,7 @@ export const fetchUsers = (seed: string) => async (dispatch: Dispatch) => {
     dispatch(setSeed(seed))
   } catch (e) {
     console.error(e)
+  } finally {
+    dispatch(setIsLoading(false))
   }
 }

@@ -5,6 +5,7 @@ import {
 } from '@/features/users/model/reducer/usersReducer.types'
 
 const initialState = {
+  isLoading: false,
   seed: '',
   users: [] as UserDomain[],
 }
@@ -43,6 +44,11 @@ export const usersReducer = (
         ...state,
         seed: action.seed,
       }
+    case 'USERS/SET-IS-LOADING':
+      return {
+        ...state,
+        isLoading: action.isLoading,
+      }
     default:
       return state
   }
@@ -51,6 +57,7 @@ export const usersReducer = (
 type ActionsType =
   | ReturnType<typeof createUser>
   | ReturnType<typeof removeUser>
+  | ReturnType<typeof setIsLoading>
   | ReturnType<typeof setSeed>
   | ReturnType<typeof setUsers>
   | ReturnType<typeof updateUser>
@@ -61,3 +68,5 @@ export const updateUser = (id: string, userModel: UpdateUserModel) =>
   ({ id, type: 'USERS/UPDATE-USER', userModel }) as const
 export const removeUser = (id: string) => ({ id, type: 'USERS/REMOVE-USER' }) as const
 export const setSeed = (seed: string) => ({ seed, type: 'USERS/SET-SEED' }) as const
+export const setIsLoading = (isLoading: boolean) =>
+  ({ isLoading, type: 'USERS/SET-IS-LOADING' }) as const
