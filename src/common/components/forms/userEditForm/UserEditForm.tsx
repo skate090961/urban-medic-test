@@ -23,6 +23,7 @@ export function UserEditForm({ className, defaultValues, onRemove, onSubmit }: U
   }
 
   const { errors, handleSubmit, onChange, register, value } = useEditForm({ values })
+  const errorMessage = '*Поле заполнено некорректно'
 
   return (
     <form className={`${s.form} ${className}`} noValidate onSubmit={handleSubmit(onSubmit)}>
@@ -38,14 +39,18 @@ export function UserEditForm({ className, defaultValues, onRemove, onSubmit }: U
         <TextField
           label={'Фамилия*'}
           {...register('lastName')}
-          errorMessage={errors.lastName?.message}
+          errorMessage={errors.lastName?.message && errorMessage}
         />
         <TextField
           label={'Имя*'}
           {...register('firstName')}
-          errorMessage={errors.firstName?.message}
+          errorMessage={errors.firstName?.message && errorMessage}
         />
-        <TextField label={'Email*'} {...register('email')} errorMessage={errors.email?.message} />
+        <TextField
+          label={'Email*'}
+          {...register('email')}
+          errorMessage={errors.email?.message && errorMessage}
+        />
       </div>
       <div className={s.controls}>
         {onRemove && (
