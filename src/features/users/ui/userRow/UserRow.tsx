@@ -1,25 +1,30 @@
 import { FC, memo } from 'react'
 
 import { Table } from '@/common/components/ui/table'
-import { User } from '@/features/users/api'
+import { UserDomain } from '@/features/users/model/reducer'
 import { EditUserControl } from '@/features/users/ui'
 
-type Props = {
-  user: User
+type UserRowProps = {
+  user: UserDomain
 }
 
-export const UserRow: FC<Props> = memo(({ user }) => {
-  const { count, email, firstName, gender, lastName } = user
+export const UserRow: FC<UserRowProps> = memo(({ user }) => {
+  const { email, firstName, gender, id, lastName } = user
+  const GENDER = {
+    female: 'Женский',
+    male: 'Мужской',
+  }
+  const genderLabel = GENDER[gender as keyof typeof GENDER] ?? 'Неизвестный'
 
   return (
     <Table.Row>
-      <Table.Cell>{count}</Table.Cell>
+      <Table.Cell>{id}</Table.Cell>
       <Table.Cell>{lastName}</Table.Cell>
       <Table.Cell>{firstName}</Table.Cell>
-      <Table.Cell>{gender}</Table.Cell>
+      <Table.Cell>{genderLabel}</Table.Cell>
       <Table.Cell>{email}</Table.Cell>
       <Table.Cell>
-        <EditUserControl user={user} />
+        <EditUserControl isEditMode={user.isSavedUser} user={user} />
       </Table.Cell>
     </Table.Row>
   )

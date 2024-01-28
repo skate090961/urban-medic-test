@@ -1,12 +1,20 @@
 .root {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+
   display: flex;
   justify-content: right;
+
   width: 100%;
+  height: var(--header-height);
+  padding: 1rem 1.5rem;
+
   background-color: var(--color-light-100);
 }
 
 .controls {
   display: flex;
   gap: 1rem;
-  padding: 1rem 1.5rem;
 }

@@ -1,13 +1,6 @@
-import { StrictMode } from 'react'
-
+import { AppProvider } from '@/app/providers/AppProvider'
 import { createRoot } from 'react-dom/client'
 
 import './styles/index.scss'
 
-import { App } from './App'
-
-createRoot(document.getElementById('root') as HTMLElement).render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-)
+createRoot(document.getElementById('root') as HTMLElement).render(<AppProvider />)

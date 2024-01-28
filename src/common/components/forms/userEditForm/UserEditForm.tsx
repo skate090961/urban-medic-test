@@ -3,18 +3,19 @@ import { UserEditFormValues, useEditForm } from '@/common/components/forms/userE
 import { GENDER_OPTIONS } from '@/common/components/forms/userEditForm/userEditForm.constants'
 import { Button, Switch, TextField } from '@/common/components/ui'
 import { IconButton } from '@/common/components/ui/iconButton/IconButton'
-import { User } from '@/features/users/api'
+import { User } from '@/features/users/model/reducer'
 
 import s from './UserEditForm.module.scss'
 
 type UserEditFormProps = {
   className?: string
   defaultValues: User
+  onRemove?: () => void
   onSubmit: (data: UserEditFormValues) => void
 }
 
 //TODO: add validate, styles
-export function UserEditForm({ className, defaultValues, onSubmit }: UserEditFormProps) {
+export function UserEditForm({ className, defaultValues, onRemove, onSubmit }: UserEditFormProps) {
   const values: UserEditFormValues = {
     email: defaultValues?.email,
     firstName: defaultValues?.firstName,
@@ -48,9 +49,11 @@ export function UserEditForm({ className, defaultValues, onSubmit }: UserEditFor
         <TextField label={'Email*'} {...register('email')} errorMessage={errors.email?.message} />
       </div>
       <div className={s.controls}>
-        <IconButton className={s.trashButton} type={'button'}>
-          <SharedSvgSelector icon={'trash'} />
-        </IconButton>
+        {onRemove && (
+          <IconButton className={s.trashButton} onClick={onRemove} type={'button'}>
+            <SharedSvgSelector icon={'trash'} />
+          </IconButton>
+        )}
         <Button fullWidth type={'submit'}>
           Сохранить
         </Button>
