@@ -3,6 +3,7 @@ import { FC, memo } from 'react'
 import { Table } from '@/common/components/ui/table'
 import { UserDomain } from '@/features/users/model/reducer'
 import { EditUserControl } from '@/features/users/ui'
+import { GENDER } from '@/features/users/ui/userRow/userRow.constans'
 
 type UserRowProps = {
   index: number
@@ -11,10 +12,7 @@ type UserRowProps = {
 
 export const UserRow: FC<UserRowProps> = memo(({ index, user }) => {
   const { email, firstName, gender, lastName } = user
-  const GENDER = {
-    female: 'Женский',
-    male: 'Мужской',
-  }
+
   const genderLabel = GENDER[gender as keyof typeof GENDER] ?? 'Неизвестный'
 
   return (

@@ -1,17 +1,11 @@
-import { useDispatch } from 'react-redux'
-
+import { useHeader } from '@/common/components/header/useHeader'
 import { Button } from '@/common/components/ui'
-import { setSeed, setUsers } from '@/features/users/model/reducer'
 import { CreateUserControl } from '@/features/users/ui'
 
 import s from './Header.module.scss'
 
 export function Header() {
-  const dispatch = useDispatch()
-  const handleLogoutClick = () => {
-    dispatch(setSeed(''))
-    dispatch(setUsers([]))
-  }
+  const { handleLogoutClick } = useHeader()
 
   return (
     <header className={s.root}>
