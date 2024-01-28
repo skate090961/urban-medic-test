@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom'
 
-import { selectIsAuth } from '@/features/users/model/reducer'
+import { selectSeed } from '@/features/users/model/reducer'
 import { Auth } from '@/pages/auth/Auth'
 import { Home } from '@/pages/home'
 
@@ -9,9 +9,9 @@ const publicRoutes = [{ element: <Auth />, path: '/auth' }]
 const privateRoutes = [{ element: <Home />, path: '/' }]
 
 function PrivateRoutes() {
-  const isAuth = useSelector(selectIsAuth)
+  const seed = useSelector(selectSeed)
 
-  return isAuth ? <Home /> : <Navigate to={'auth'} />
+  return seed ? <Home /> : <Navigate to={'auth'} />
 }
 
 const router = createBrowserRouter([

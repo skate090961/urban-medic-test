@@ -5,7 +5,6 @@ import {
 } from '@/features/users/model/reducer/usersReducer.types'
 
 const initialState = {
-  isAuth: false,
   seed: '',
   users: [] as UserDomain[],
 }
@@ -42,7 +41,6 @@ export const usersReducer = (
     case 'USERS/SET-SEED':
       return {
         ...state,
-        isAuth: true,
         seed: action.seed,
       }
     default:
