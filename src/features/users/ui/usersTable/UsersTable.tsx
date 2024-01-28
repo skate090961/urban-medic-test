@@ -15,7 +15,7 @@ export function UsersTable({ className, users }: UsersTableProps) {
       <TableHeader columns={USERS_TABLE_COLUMNS} />
       <Table.Body>
         {users.map((user, index) => (
-          <UserRow key={index} user={user} />
+          <UserRow index={index} key={user.id} user={user} />
         ))}
       </Table.Body>
     </Table.Root>

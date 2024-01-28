@@ -5,11 +5,12 @@ import { UserDomain } from '@/features/users/model/reducer'
 import { EditUserControl } from '@/features/users/ui'
 
 type UserRowProps = {
+  index: number
   user: UserDomain
 }
 
-export const UserRow: FC<UserRowProps> = memo(({ user }) => {
-  const { email, firstName, gender, id, lastName } = user
+export const UserRow: FC<UserRowProps> = memo(({ index, user }) => {
+  const { email, firstName, gender, lastName } = user
   const GENDER = {
     female: 'Женский',
     male: 'Мужской',
@@ -18,7 +19,7 @@ export const UserRow: FC<UserRowProps> = memo(({ user }) => {
 
   return (
     <Table.Row>
-      <Table.Cell>{id}</Table.Cell>
+      <Table.Cell>{index + 1}</Table.Cell>
       <Table.Cell>{lastName}</Table.Cell>
       <Table.Cell>{firstName}</Table.Cell>
       <Table.Cell>{genderLabel}</Table.Cell>
